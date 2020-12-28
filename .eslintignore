@@ -1,0 +1,4 @@
+public
+dist
+src/unpackage
+src/**/*.test.js
