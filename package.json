@@ -39,7 +39,9 @@
         "test:h5": "cross-env UNI_PLATFORM=h5 jest -i",
         "test:ios": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=ios jest -i",
         "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i",
-        "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i"
+        "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
+        "lint": "eslint --ext .js,.vue src",
+        "format-code": "prettier-eslint --write \"src/**/*.js\" \"src/**/*.vue\""
     },
     "dependencies": {
         "@dcloudio/uni-app-plus": "^2.0.0-29820201110001",
@@ -82,7 +84,9 @@
         "eslint-config-prettier": "^7.1.0",
         "eslint-plugin-prettier": "^3.3.0",
         "eslint-plugin-vue": "^7.4.0",
+        "husky": "^4.3.6",
         "jest": "^25.4.0",
+        "lint-staged": "^10.5.3",
         "mini-types": "*",
         "miniprogram-api-typings": "*",
         "postcss-comment": "^2.0.0",
@@ -93,6 +97,17 @@
         "Android >= 4",
         "ios >= 8"
     ],
+    "lint-staged": {
+        "src/**/*.{js,vue}": [
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
     "uni-app": {
         "scripts": {}
     }

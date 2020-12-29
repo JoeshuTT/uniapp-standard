@@ -1,41 +1,24 @@
 <template>
-  <view>
-    <page-head :title="title" />
-    <view class="ad-view">
-      <ad
-        adpid="1111111111"
-        :unit-id="unitId"
-        type="feed"
-        @load="adload"
-        @error="aderror"
-      />
-      <!-- #ifdef APP-PLUS -->
-      <view
-        v-if="!isLoad"
-        class="ad-tips"
-      >
-        <text>{{ adMessage }}</text>
-      </view>
-      <!-- #endif -->
-      <!-- #ifndef APP-PLUS -->
-      <view class="ad-tips">
-        <text>小程序端的广告ID由小程序平台提供</text>
-      </view>
-      <!-- #endif -->
+    <view>
+        <page-head :title="title" />
+        <view class="ad-view">
+            <ad adpid="1111111111" :unit-id="unitId" type="feed" @load="adload" @error="aderror" />
+            <!-- #ifdef APP-PLUS -->
+            <view v-if="!isLoad" class="ad-tips">
+                <text>{{ adMessage }}</text>
+            </view>
+            <!-- #endif -->
+            <!-- #ifndef APP-PLUS -->
+            <view class="ad-tips">
+                <text>小程序端的广告ID由小程序平台提供</text>
+            </view>
+            <!-- #endif -->
+        </view>
+        <view class="tips">
+            <text class="tips-text"> 本示例页面仅演示ad组件。另点此可体验 </text
+            ><text class="tips-hl" @click="gotoapi"> 激励视频API </text><text class="tips-text"> 。 </text>
+        </view>
     </view>
-    <view class="tips">
-      <text class="tips-text">
-        本示例页面仅演示ad组件。另点此可体验
-      </text><text
-        class="tips-hl"
-        @click="gotoapi"
-      >
-        激励视频API
-      </text><text class="tips-text">
-        。
-      </text>
-    </view>
-  </view>
 </template>
 
 <script>

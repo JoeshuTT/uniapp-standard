@@ -23,44 +23,45 @@
     </view>
 </template>
 <script>
-    import uniIcons from '@/components/uni-icons/uni-icons.vue'
-    export default {
-        data() {
-            return {
-                title: 'progress',
-                pgList: [0, 0, 0, 0]
-            }
-        },
-        components: {
-            uniIcons
-        },
-        methods: {
-            setProgress() {
-                this.pgList = [20, 40, 60, 80]
-            },
-            clearProgress() {
-                this.pgList = [0, 0, 0, 0]
-            }
+import uniIcons from '@/components/uni-icons/uni-icons.vue'
+
+export default {
+    components: {
+        uniIcons,
+    },
+    data() {
+        return {
+            title: 'progress',
+            pgList: [0, 0, 0, 0],
         }
-    }
+    },
+    methods: {
+        setProgress() {
+            this.pgList = [20, 40, 60, 80]
+        },
+        clearProgress() {
+            this.pgList = [0, 0, 0, 0]
+        },
+    },
+}
 </script>
 
 <style>
-    .progress-box {
-        display: flex;
-        height: 50rpx;
-        margin-bottom: 60rpx;
-    }
+.progress-box {
+    display: flex;
+    height: 50rpx;
+    margin-bottom: 60rpx;
+}
 
-    .uni-icon {
-        line-height: 1.5;
-    }
+.uni-icon {
+    line-height: 1.5;
+}
 
-    .progress-cancel {
-        margin-left: 40rpx;
-    }
-    
-    .progress-control button{
-        margin-top: 20rpx;
-    }
+.progress-cancel {
+    margin-left: 40rpx;
+}
+
+.progress-control button {
+    margin-top: 20rpx;
+}
 </style>

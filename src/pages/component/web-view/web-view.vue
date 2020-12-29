@@ -8,7 +8,7 @@
 </template>
 
 <script>
-	export default {
+	export default {  
 		data() {
 			return {
 				url: 'https://uniapp.dcloud.io/static/web-view.html'

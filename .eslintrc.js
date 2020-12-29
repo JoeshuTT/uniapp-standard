@@ -18,7 +18,7 @@ module.exports = {
         getApp: true,
         getCurrentPages: true,
     },
-    extends: ['plugin:vue/recommended', 'eslint:recommended'],
+    extends: ['plugin:vue/recommended', 'eslint:recommended', 'prettier', 'prettier/vue'],
     rules: {
         //
     },
