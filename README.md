@@ -93,12 +93,10 @@ npm config set registry https://registry.npm.taobao.org
 npm install
 ```
 
-## 启动
+## 启动（H5）
 
 ```
 npm run serve
-npm run dev:%PLATFORM%
-npm run build:%PLATFORM%
 ```
 ## 在 `pages.json` 下配置 easycom 模式
 
