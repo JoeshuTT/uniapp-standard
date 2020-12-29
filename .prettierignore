@@ -16,6 +16,8 @@ package-lock.json
 ## Local
 src/unpackage
 src/wxcomponents
+src/pages.json
+src/manifest.json
 
 ## Built-files
 .cache

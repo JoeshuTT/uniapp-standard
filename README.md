@@ -1,7 +1,7 @@
 # uniapp-standard
 
 > 你需要在本地提前安装好 [VS Code](https://code.visualstudio.com/)，[node](http://nodejs.org/)，[git](https://git-scm.com/)，[vue cli](https://cli.vuejs.org/)。
-已经阅读过 [uni-app](https://uniapp.dcloud.io/quickstart-cli)。不熟悉 cli 创建 `uni-app` 项目的不建议上本架子，听官方的话，可视化新建项目，避免带来其他烦恼。
+已经阅读过 [uni-app](https://uniapp.dcloud.io/quickstart-cli)。不熟悉 cli 创建 `uni-app` 项目的不建议上本架子，听官方的话，用HX可视化新建项目，避免带来其他烦恼。
 
 
 ## 当前使用
