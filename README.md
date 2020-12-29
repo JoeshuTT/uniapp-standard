@@ -2,11 +2,13 @@
 
 > 你需要在本地提前安装好 [VS Code](https://code.visualstudio.com/)，[node](http://nodejs.org/)，[git](https://git-scm.com/)，[vue cli](https://cli.vuejs.org/)。
 已经阅读过 [uni-app](https://uniapp.dcloud.io/quickstart-cli)。
+
 ## 特性
 - 合理的项目结构
 - 常用工具类
 - 统一项目代码风格，使用 eslint 语法检查 和 prettier 格式化
-- 提供 uni-app 代码块（vscode）
+- 提供 uni-app 代码块（vscode），拥有和 HBuilderX 一样的代码块
+- 提供 `vue.config.js`，已内置 `发布时删除console`，`devServer.proxy 跨域请求代理`
 
 ## VSCode 最佳实践
 
@@ -71,3 +73,5 @@ npm install --registry=https://registry.npm.taobao.org
 ## 启动
 
 
+## 参考链接
+[当 uni-app 遇见 vscode](https://ask.dcloud.net.cn/article/36286)

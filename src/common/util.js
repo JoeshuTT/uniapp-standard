@@ -1,73 +1,153 @@
-function formatTime(time) {
-	if (typeof time !== 'number' || time < 0) {
-		return time
-	}
+/**
+ * util
+ */
 
-	var hour = parseInt(time / 3600)
-	time = time % 3600
-	var minute = parseInt(time / 60)
-	time = time % 60
-	var second = time
-
-	return ([hour, minute, second]).map(function (n) {
-		n = n.toString()
-		return n[1] ? n : '0' + n
-	}).join(':')
+/**
+ * getSystemInfoSync
+ * @return {Object}
+ */
+let systemInfo = null
+export const getSystemInfoSync = function() {
+    if (systemInfo == null) {
+        systemInfo = uni.getSystemInfoSync()
+    }
+    return systemInfo
 }
 
-function formatLocation(longitude, latitude) {
-	if (typeof longitude === 'string' && typeof latitude === 'string') {
-		longitude = parseFloat(longitude)
-		latitude = parseFloat(latitude)
-	}
+/**
+ * 函数节流
+ * @param {*} fn 事件回调
+ * @param {*} interval 时间间隔的阈值
+ */
+export const throttle = function(fn, interval) {
+    let last = 0
+    return function() {
+        const context = this
+        const args = arguments
+        const now = +new Date()
 
-	longitude = longitude.toFixed(2)
-	latitude = latitude.toFixed(2)
-
-	return {
-		longitude: longitude.toString().split('.'),
-		latitude: latitude.toString().split('.')
-	}
+        if (now - last >= interval) {
+            last = now
+            fn.apply(context, args)
+        }
+    }
 }
-var dateUtils = {
-	UNITS: {
-		'年': 31557600000,
-		'月': 2629800000,
-		'天': 86400000,
-		'小时': 3600000,
-		'分钟': 60000,
-		'秒': 1000
-	},
-	humanize: function (milliseconds) {
-		var humanize = '';
-		for (var key in this.UNITS) {
-			if (milliseconds >= this.UNITS[key]) {
-				humanize = Math.floor(milliseconds / this.UNITS[key]) + key + '前';
-				break;
-			}
-		}
-		return humanize || '刚刚';
-	},
-	format: function (dateStr) {
-		var date = this.parse(dateStr)
-		var diff = Date.now() - date.getTime();
-		if (diff < this.UNITS['天']) {
-			return this.humanize(diff);
-		}
-		var _format = function (number) {
-			return (number < 10 ? ('0' + number) : number);
-		};
-		return date.getFullYear() + '/' + _format(date.getMonth() + 1) + '/' + _format(date.getDate()) + '-' +
-			_format(date.getHours()) + ':' + _format(date.getMinutes());
-	},
-	parse: function (str) { //将"yyyy-mm-dd HH:MM:ss"格式的字符串，转化为一个Date对象
-		var a = str.split(/[^0-9]/);
-		return new Date(a[0], a[1] - 1, a[2], a[3], a[4], a[5]);
-	}
-};
 
-module.exports = {
-	formatTime: formatTime,
-	formatLocation: formatLocation,
-	dateUtils: dateUtils
+/**
+ * 函数防抖
+ * @param {callback} fn 事件回调
+ * @param {number} delay 每次推迟执行的等待时间
+ */
+export const debounce = function(fn, delay) {
+    let last = 0
+    let timer = null
+    return function() {
+        const context = this
+        const args = arguments
+        const now = +new Date()
+
+        if (now - last < delay) {
+            clearTimeout(timer)
+            timer = setTimeout(function() {
+                last = now
+                fn.apply(context, args)
+            }, delay)
+        } else {
+            last = now
+            fn.apply(context, args)
+        }
+    }
+}
+
+/**
+ * 浅拷贝
+ * @param {Object} source
+ * @return {Object}
+ */
+export function shallowClone(source) {
+    if (!source && typeof source !== 'object') {
+        throw new Error('error arguments', 'shallowClone')
+    }
+    return Object.assign({}, source)
+}
+
+/**
+ * 深拷贝
+ * @param {Object} source
+ * @return {Object}
+ */
+export function deepClone(source) {
+    if (!source && typeof source !== 'object') {
+        throw new Error('error arguments', 'deepClone')
+    }
+    const targetObj = source.constructor === Array ? [] : {}
+    Object.keys(source).forEach(keys => {
+        if (source[keys] && typeof source[keys] === 'object') {
+            targetObj[keys] = deepClone(source[keys])
+        } else {
+            targetObj[keys] = source[keys]
+        }
+    })
+    return targetObj
+}
+
+/**
+ * 查询指定节点的布局位置信息，其功能类似于 DOM 的 getBoundingClientRect
+ * @param {Boolean} context 节点对象实例
+ * @param {String} selector .a, #a
+ * @param {Boolean} all
+ */
+export const getRect = function(context, selector, all = false) {
+    return new Promise((resolve) => {
+        uni.createSelectorQuery().in(context)[all ? 'selectAll' : 'select'](selector).boundingClientRect((rect) => {
+            resolve(rect)
+        }).exec()
+    })
+}
+
+/**
+ * 生成一个 UUID
+ */
+export const guid = function() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0
+        var v = c === 'x' ? r : (r & 0x3 | 0x8)
+        return v.toString(16)
+    })
+}
+
+/**
+   * 个性化 console.log
+   * @param {*} type
+   * @param {*} key
+   * @param {*} text
+   */
+export const log = (type = 'danger', key = '错误', text = '系统异常') => {
+    // #ifdef APP-PLUS || APP-NVUE
+    console.log(`${key}: [${text}]`)
+    // #endif
+
+    // #ifdef H5 || MP
+    let bgColor = '#ee0a24'
+    switch (type) {
+        case 'default':
+            bgColor = '#515a6e'
+            break
+        case 'primary':
+            bgColor = '#07c160'
+            break
+        case 'info':
+            bgColor = '#1989fa'
+            break
+        case 'warning':
+            bgColor = '#ff976a'
+            break
+        case 'danger':
+            bgColor = '#ee0a24'
+            break
+        default:
+            break
+    }
+    console.log(`%c ${key} %c ${text}`, 'background:#7ebea0; padding: 2px 4px; border-radius: 3px 0 0 3px; color: #fff;', `background:${bgColor};padding: 2px 4px; border-radius: 0 3px 3px 0;  color: #fff;`)
+    // #endif
 }

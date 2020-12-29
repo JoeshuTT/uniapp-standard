@@ -5,31 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<title>
-			<%= htmlWebpackPlugin.options.title %>
+            <%= htmlWebpackPlugin.options.title %>
 		</title>
-		<!-- 正式发布的时候使用，开发期间不启用。↓ -->
-        <!-- <script src="/h5/touch-emulator.js"></script>
-		<script>
-            TouchEmulator();
-			if (document.documentElement.clientWidth > 1024) {
-				window.location.href = '/h5/pcguide.html#'+location.pathname+location.search;
-			}
-		</script>
-        <style>
-            ::-webkit-scrollbar{
-                display: none; 
-            }
-        </style>
-        <script>
-            var _hmt = _hmt || [];
-            (function() {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?";// 百度统计key
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();
-        </script> -->
-        <!-- 正式发布的时候使用，开发期间不启用。↑ -->
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
 				document.documentElement.style.fontSize = document.documentElement.clientWidth / 20 + 'px'
@@ -46,8 +23,7 @@
 		</noscript>
 		<div id="app"></div>
 		<!-- built files will be auto injected -->
-		<script>
-			/*BAIDU_STAT*/
-		</script>
+		<!-- 在桌面端上模拟移动端 touch 事件 -->
+        <script src="https://cdn.jsdelivr.net/npm/@vant/touch-emulator"></script>
 	</body>
 </html>
