@@ -3,6 +3,19 @@
 > 你需要在本地提前安装好 [VS Code](https://code.visualstudio.com/)，[node](http://nodejs.org/)，[git](https://git-scm.com/)，[vue cli](https://cli.vuejs.org/)。
 已经阅读过 [uni-app](https://uniapp.dcloud.io/quickstart-cli)。不熟悉 cli 创建 `uni-app` 项目的不建议上本架子，听官方的话，可视化新建项目，避免带来其他烦恼。
 
+
+## 当前使用
+
+VS Code 1.52.1
+
+node v12.18.3
+
+npm 6.14.6
+
+@vue/cli 4.5.9
+
+@dcloudio/uni-xxxx  29820201110001
+
 ## 特性
 
 - 合理的项目结构

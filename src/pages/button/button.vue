@@ -32,23 +32,14 @@
     <demo-block title="自定义颜色" padding>
       <i-button class="mb20" custom-class="mb20" color="#7232dd">单色按钮</i-button>
       <i-button class="mb20" custom-class="mb20" color="#7232dd" plain>单色按钮</i-button>
-      <i-button class="mb20" custom-class="mb20" color="linear-gradient(to right, #4bb0ff, #6149f6)"
-        >渐变色按钮</i-button
-      >
+      <i-button class="mb20" custom-class="mb20" color="linear-gradient(to right, #4bb0ff, #6149f6)">渐变色按钮</i-button>
     </demo-block>
     <demo-block title="自定义样式" padding>
-      <i-button
-        class="mb20"
-        custom-class="mb20"
-        :custom-style="{ width: '100px', height: '100px', borderRadius: '20rpx' }"
-        >单色按钮</i-button
-      >
+      <i-button class="mb20" custom-class="mb20" :custom-style="{ width: '100px', height: '100px', borderRadius: '20rpx' }">单色按钮</i-button>
     </demo-block>
     <!-- #ifdef MP -->
     <demo-block title="开放能力" padding>
-      <i-button open-type="getUserInfo" type="primary" class="mb20" custom-class="mb20" @getuserinfo="getUserInfo"
-        >获取用户信息</i-button
-      >
+      <i-button open-type="getUserInfo" type="primary" class="mb20" custom-class="mb20" @getuserinfo="getUserInfo">获取用户信息</i-button>
     </demo-block>
     <!-- #endif -->
   </view>
