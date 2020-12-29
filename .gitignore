@@ -1,12 +1,15 @@
-.DS_Store
-node_modules/
+dist
+node_modules
+yarn.lock
+package-lock.json
 unpackage/
-dist/
 wxcomponents/**/*.vue
 wxcomponents/**/*.css
-# local env files
-.env.local
-.env.*.local
+
+# Mac General
+.DS_Store
+.AppleDouble
+.LSOverride
 
 # Log files
 npm-debug.log*
@@ -16,7 +19,6 @@ yarn-error.log*
 # Editor directories and files
 .project
 .idea
-.vscode
 *.suo
 *.ntvs*
 *.njsproj

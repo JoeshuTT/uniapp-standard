@@ -1,0 +1,33 @@
+{
+  // editor
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  // eslint
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue",
+    "typescript",
+    "typescriptreact"
+  ],
+  // vetur
+  "vetur.format.enable": false,
+  "vetur.validation.template": false,
+  "vetur.validation.style": false,
+  "vetur.validation.script": false,
+  "cSpell.words": [
+    "alipay",
+    "easycom",
+    "hbuilderx",
+    "miniprogram",
+    "mixins",
+    "quickapp",
+    "uniapp",
+    "weex",
+    "weixin"
+  ]
+}

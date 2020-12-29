@@ -13,7 +13,7 @@
     </demo-block>
     <demo-block title="禁用状态" padding>
       <i-button class="mb20" custom-class="mb20" type="default" disabled>禁用状态</i-button>
-      <i-button class="mb20" custom-class="mb20" type="primary" disabled>禁用状态</i-button>
+      <i-button class="mb20" custom-class="mb20" type="primary" disabled>禁用状态</i-button> 
     </demo-block>
     <demo-block title="加载状态" padding>
       <i-button class="mb20" custom-class="mb20" loading />
@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     getUserInfo(detail) {
-      console.log(detail)
+      console.log(detail)  
       console.log(detail)
     },
   },
