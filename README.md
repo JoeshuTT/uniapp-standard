@@ -1,7 +1,7 @@
 # uniapp-standard
 
-> 你需要在本地安装 [VS Code](https://code.visualstudio.com/)，[node](http://nodejs.org/)，[git](https://git-scm.com/)，[vue cli](https://cli.vuejs.org/)。
->
+> 你需要在本地提前安装好 [VS Code](https://code.visualstudio.com/)，[node](http://nodejs.org/)，[git](https://git-scm.com/)，[vue cli](https://cli.vuejs.org/)。
+已经阅读过 [uni-app](https://uniapp.dcloud.io/quickstart-cli)。
 ## 特性
 - 合理的项目结构
 - 常用工具类
