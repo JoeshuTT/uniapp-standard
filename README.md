@@ -28,7 +28,7 @@ npm 6.14.6
 ## VSCode 最佳实践
 
 1. `VS Code` 安装插件 `Vetur`，`ESLint`，`Prettier - Code formatter`
-2. 项目根目录下已经配置好了 `.vscode/settings.json`，可以保存时自动修复 Prettier 和 ESLint 错误
+2. 项目根目录下已经配置好了 `.vscode/settings.json`，可以在保存时自动修复 Prettier 和 ESLint 错误
 ## 目录结构
 
 应用的目录结构如下

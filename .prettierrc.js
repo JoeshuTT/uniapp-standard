@@ -7,7 +7,7 @@ module.exports = {
   tabWidth: 2,
   // 不使用缩进符，而使用空格
   useTabs: false,
-  // 行尾需要有分号
+  // 行尾不需要有分号
   semi: false,
   // 使用单引号
   singleQuote: true,
@@ -16,7 +16,7 @@ module.exports = {
   // jsx 不使用单引号，而使用双引号
   jsxSingleQuote: false,
   // 末尾需要有逗号
-  trailingComma: 'es5',
+  trailingComma: 'all',
   // 大括号内的首尾需要空格
   bracketSpacing: true,
   // jsx 标签的反尖括号需要换行
