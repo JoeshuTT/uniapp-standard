@@ -1,7 +1,17 @@
 # uniapp-standard
 
-> 你需要在本地安装 [node](http://nodejs.org/)，[git](https://git-scm.com/)。
+> 你需要在本地安装 [VS Code](https://code.visualstudio.com/)，[node](http://nodejs.org/)，[git](https://git-scm.com/)，[vue cli](https://cli.vuejs.org/)。
+>
+## 特性
+- 合理的项目结构
+- 常用工具类
+- 统一项目代码风格，使用 eslint 语法检查 和 prettier 格式化
+- 提供 uni-app 代码块（vscode）
 
+## VSCode 最佳实践
+
+1. `VS Code` 安装插件 `Vetur`，`ESLint`，`Prettier - Code formatter`
+2. 项目根目录下已经配置好了 `.vscode/settings.json`，可以保存时自动修复 Prettier 和 ESLint 错误
 ## 目录结构
 
 应用的目录结构如下
