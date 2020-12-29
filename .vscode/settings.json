@@ -19,14 +19,18 @@
   "vetur.validation.template": false,
   "vetur.validation.style": false,
   "vetur.validation.script": false,
-  "cSpell.words": [
+  // cSpell
+  "cSpell.ignoreWords": [
     "alipay",
     "easycom",
+    "flyio",
     "hbuilderx",
     "miniprogram",
     "mixins",
     "quickapp",
+    "truetype",
     "uniapp",
+    "vuex",
     "weex",
     "weixin"
   ]

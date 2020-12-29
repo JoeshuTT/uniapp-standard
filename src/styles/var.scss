@@ -1,0 +1,74 @@
+/* 项目样式变量 */
+
+/* 主题色 */
+$ui-color: #fc6713;
+$ui-page-bgcolor: #f7f7f7;
+$ui-border-radius: 4px;
+$ui-box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.06);
+$ui-mask-bgcolor: rgba(0,0,0,.3);
+$ui-navbar-height: 44px;
+
+// Color Palette
+$ui-black: #000;
+$ui-white: #fff;
+$ui-gray-1: #f7f7f7;
+$ui-gray-2: #f2f2f2;
+$ui-gray-3: #ebedf0;
+$ui-gray-4: #dcdee0;
+$ui-gray-5: #b2b2b2;
+$ui-gray-6: #999;
+$ui-gray-7: #666;
+$ui-gray-8: #333;
+$ui-red: #ff474d;
+$ui-blue: #1989fa;
+$ui-orange: #ff976a;
+$ui-orange-dark: #ed6a0c;
+$ui-orange-light: #fffbe8;
+$ui-green: #07c160;
+
+// Gradient Colors
+$ui-gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+$ui-gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
+
+// Component Colors
+$ui-text-color: $ui-gray-8;
+$ui-active-color: $ui-gray-2;
+$ui-active-opacity: 0.7;
+$ui-disabled-opacity: 0.5;
+$ui-background-color: $ui-gray-1;
+$ui-background-color-light: #fafafa;
+$ui-text-link-color: #576b95;
+
+// Padding
+$ui-padding-base: 5rpx;
+$ui-padding-xs: $ui-padding-base * 2;
+$ui-padding-sm: $ui-padding-base * 3;
+$ui-padding-md: $ui-padding-base * 4;
+$ui-padding-lg: $ui-padding-base * 6;
+$ui-padding-xl: $ui-padding-base * 8;
+
+// Font
+$ui-font-size-xs: 10px;
+$ui-font-size-sm: 12px;
+$ui-font-size-md: 14px;
+$ui-font-size-lg: 16px;
+$ui-font-size-xlg: 18px;
+$ui-font-weight-bold: 500;
+$ui-base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft Yahei', sans-serif;
+$ui-price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+  sans-serif;
+
+// Animation
+$ui-animation-duration-base: .3s;
+$ui-animation-duration-fast: .2s;
+
+// Border
+$ui-border-color: $ui-gray-2;
+$ui-border-width-base: 1px;
+$ui-border-radius-xs: 2px;
+$ui-border-radius-sm: 4px;
+$ui-border-radius-md: 8px;
+$ui-border-radius-lg: 16px;
+$ui-border-radius-max: 999px;

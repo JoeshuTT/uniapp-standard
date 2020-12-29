@@ -1,0 +1,12 @@
+// iconFont
+/* 引入第三方或自定义的字体图标样式 */
+@font-face {
+  font-family: 'uiIcon';
+  src: url('https://at.alicdn.com/t/font_2091441_rwaf8aurg48.ttf') format('truetype');
+}
+
+.ui-icon {
+  display: inline-block;
+  line-height: inherit;
+  font-family: 'uiIcon';
+}
