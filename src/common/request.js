@@ -37,7 +37,7 @@ fly.interceptors.response.use(
     }
   },
   err => {
-    //发生网络错误后会走到这里
+    // 发生网络错误后会走到这里
     httpErrorHandle(err)
     return Promise.reject(err)
   },
@@ -74,6 +74,7 @@ function httpErrorHandle(err) {
 // 处理业务错误
 function serviceErrorHandle(data) {
   console.log('处理业务错误 serviceErrorHandle', data)
+
   uni.showToast({
     icon: 'none',
     title: `status:${data.code},msg:${data.msg}`,

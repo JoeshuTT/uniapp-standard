@@ -20,19 +20,19 @@ npm 6.14.6
 
 - 合理的项目结构
 - 基本 HTTP 请求封装
-- 常用的函数库，遵循 JSDoc+ 规范
+- 常用的函数库（loadsh，validate），遵循 JSDoc+ 规范
 - 统一项目代码风格，使用 eslint 语法检查 和 prettier 格式化
 - 统一项目样式风格，提供了一些常用的 scss 样式代码片段，全局样式变量，后续考虑加入stylelint
 - 提供 `vue.config.js`，已内置 `发布时删除console`，`devServer.proxy 跨域请求代理`
 - 提供 uni-app 代码块（vscode），拥有和 HBuilderX 一样的代码块
-- 项目图标建议使用 [iconFont](https://www.iconfont.cn/)，使用简单，维护方便
+- 项目图标建议使用 [iconFont](https://www.iconfont.cn/)，全平台可用，使用简单，维护方便
 
 ## VSCode 最佳实践
 
 1. `VS Code` 预先安装插件 `Vetur`，`ESLint`，`Prettier - Code formatter`
 2. 项目根目录下已经配置好了 `.vscode/settings.json`，可以在保存时，根据项目下已配置好的规则（ `.prettierrc` `.eslintrc`），自动修复 Prettier 和 ESLint 错误
 
-## 需要时常更新维护
+## 需要时常更新维护!
 
 - 更新uni相关依赖项
 - 更新uni-ui

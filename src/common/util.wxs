@@ -1,0 +1,15 @@
+/**
+ * rawPhone
+ * @param {*} phone
+ */
+var rawPhone = function (phone) {
+  if (phone) {
+    return phone.substring(0, 3) + '****' + phone.substring(7, 11)
+  } else {
+    return ''
+  }
+}
+
+module.exports = {
+  rawPhone: rawPhone,
+}

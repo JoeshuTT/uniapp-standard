@@ -17,7 +17,6 @@ export default {
 <style>
 /*每个页面公共css */
 /* #ifndef APP-NVUE */
-
 page {
   line-height: 1.2;
   color: #323233;
@@ -34,8 +33,4 @@ page {
   display: none;
 }
 /* #endif */
-
-.container {
-  padding-bottom: 40rpx;
-}
 </style>

@@ -3,7 +3,7 @@
  */
 const config = {
   development: {
-    appName: 'Hello Iui',
+    appName: 'Hello uniapp',
     appVersionCode: '',
     appVersionName: '',
     base_api: '',
@@ -11,7 +11,7 @@ const config = {
     themeColor: '#42b983',
   },
   production: {
-    appName: 'Hello Iui',
+    appName: 'Hello uniapp',
     appVersionCode: '',
     appVersionName: '',
     base_api: '',
