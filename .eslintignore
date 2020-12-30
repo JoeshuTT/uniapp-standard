@@ -1,4 +1,6 @@
 public
 dist
 src/unpackage
+unpackage
 src/**/*.test.js
+src/components/uni-ui

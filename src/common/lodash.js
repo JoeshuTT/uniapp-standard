@@ -1,4 +1,5 @@
-// Lodash 通过降低 array、number、objects、string 等等的使用难度从而让 JavaScript 变得更简单。
+// lodash 简易实现
+
 /**
  * 补零
  * @param {Number} n

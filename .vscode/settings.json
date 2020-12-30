@@ -23,15 +23,18 @@
   "cSpell.ignoreWords": [
     "alipay",
     "easycom",
+    "eqeqeq",
     "flyio",
     "hbuilderx",
     "miniprogram",
     "mixins",
     "quickapp",
+    "stylelint",
     "truetype",
     "uniapp",
+    "unpackage",
     "vuex",
     "weex",
     "weixin"
-  ]
+  ],
 }

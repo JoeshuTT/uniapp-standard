@@ -18,7 +18,7 @@ src/unpackage
 src/wxcomponents
 src/pages.json
 src/manifest.json
-
+src/components/uni-ui
 ## Built-files
 .cache
 dist
