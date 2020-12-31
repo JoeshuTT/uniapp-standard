@@ -5,6 +5,7 @@ import { isDef, isNumeric } from './validate'
 /**
  * 补零
  * @param {Number} n
+ * @returns {String}
  */
 const padZero = function (n) {
   n = n.toString()
@@ -12,7 +13,7 @@ const padZero = function (n) {
 }
 
 /**
- * getSystemInfoSync
+ * 获取系统信息
  * @returns {Object}
  */
 export const getSystemInfoSync = function () {
@@ -77,8 +78,9 @@ const getPrevPage = function (delta = 1) {
 
 /**
  * API Promise化
- * @param {Function} func 可用uniapp的API
- * @example promisify(wx.getSystemInfo)().then(console.log)
+ * @param {Function} func 可用的uniapp的API函数名
+ * @example
+ * promisify(wx.getSystemInfo)().then(console.log)
  */
 const promisify = function (func) {
   if (typeof func !== 'function') {
@@ -97,8 +99,8 @@ const promisify = function (func) {
 
 /**
  * addUnit
- * @param {Number|String} val
- * @param {Number} destWidth
+ * @param {String|Number} value
+ * @returns {String}
  */
 const addUnit = function (value) {
   if (!isDef(value)) {
@@ -113,6 +115,7 @@ const addUnit = function (value) {
  * rpx2px
  * @param {Number} val
  * @param {Number} destWidth
+ * @returns {Number}
  */
 
 const rpx2px = function (val, destWidth = 750) {
@@ -124,23 +127,25 @@ const rpx2px = function (val, destWidth = 750) {
 
 /**
  * 一个参数对象格式化为一个url参数，编码
- * @param {Object} query 参数对象
  * @description 可用于页面跳转携带多个参数，携带中文参数的情况
+ * @param {Object} query 参数对象
+ * @returns {String}
  */
 const qsStringify = function (query) {
   if (!query && typeof query !== 'object') {
     throw new Error('error arguments', 'qsStringify')
   }
   const url = Object.keys(query)
-    .map((key) => key + '=' + encodeURIComponent(query[key]))
+    .map(key => key + '=' + encodeURIComponent(query[key]))
     .join('&')
   return url
 }
 
 /**
- * 一个参数对象格式化为一个url参数，解码
- * @param {Object} query 参数对象
+ * 一个已编码参数对象, 解码
  * @description 可用于页面跳转携带多个参数，携带中文参数的情况
+ * @param {Object} query 参数对象
+ * @returns {Object}
  */
 
 const qsDecode = function (query) {
@@ -148,7 +153,7 @@ const qsDecode = function (query) {
     throw new Error('error arguments', 'qsDecode')
   }
   const target = {}
-  Object.keys(query).forEach((key) => {
+  Object.keys(query).forEach(key => {
     target[key] = decodeURIComponent(query[key])
   })
   return target
@@ -160,12 +165,12 @@ const qsDecode = function (query) {
  * @param {Boolean} all
  */
 const getRect = function (context, selector, all = false) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     uni
       .createSelectorQuery()
       .in(context)
       [all ? 'selectAll' : 'select'](selector)
-      .boundingClientRect((rect) => {
+      .boundingClientRect(rect => {
         resolve(rect)
       })
       .exec()

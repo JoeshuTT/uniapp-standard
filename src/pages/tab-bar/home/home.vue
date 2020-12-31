@@ -21,16 +21,9 @@ export default {
   onLoad(options) {},
   methods: {
     onClick() {
-      //   uni.showToast({
-      //     icon: 'none',
-      //     title: '11',
-      //   })
-      uni.navigateTo({
-        url: `/pages/temp/temp`,
-      })
+      uni.navigateTo({ url: `/pages/temp/temp` })
     },
     onRequest() {
-      //   console.log(API_EXAMPLE.list)
       API_EXAMPLE.list()
         .then(res => {
           console.log(res)

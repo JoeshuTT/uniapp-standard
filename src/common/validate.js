@@ -3,6 +3,7 @@
 /**
  * 验证 - 是否有值
  * @param {*} value
+ * @returns {Boolean}
  */
 export function isDef(value) {
   return value !== undefined && value !== null
@@ -11,6 +12,7 @@ export function isDef(value) {
 /**
  * isNaN
  * @param {Number} val
+ * @returns {Boolean}
  */
 export function isNaN(val) {
   if (Number.isNaN) {
@@ -24,6 +26,7 @@ export function isNaN(val) {
 /**
  * 验证 - 是否是对象
  * @param {*} x
+ * @returns {Boolean}
  */
 export function isObj(x) {
   const type = typeof x
@@ -33,6 +36,7 @@ export function isObj(x) {
 /**
  * 验证 - 是否是字符串
  * @param {string} str
+ * @returns {Boolean}
  */
 export function isString(str) {
   if (typeof str === 'string' || str instanceof String) {
@@ -44,6 +48,7 @@ export function isString(str) {
 /**
  * 验证 - 是否是数字
  * @param {Number} value
+ * @returns {Boolean}
  */
 export function isNumber(value) {
   return /^\d+$/.test(value)
@@ -52,6 +57,7 @@ export function isNumber(value) {
 /**
  * 验证 - 是否是带小数点的数字
  * @param {String} val
+ * @returns {Boolean}
  */
 export function isNumeric(val) {
   return /^\d+(\.\d+)?$/.test(val)
@@ -60,6 +66,7 @@ export function isNumeric(val) {
 /**
  * 验证 - 是否是数组
  * @param {Array} arg
+ * @returns {Boolean}
  */
 export function isArray(arg) {
   if (typeof Array.isArray === 'undefined') {
@@ -71,6 +78,7 @@ export function isArray(arg) {
 /**
  * 验证 - 是否是对象{}，非数组情况
  * @param {Array} arg
+ * @returns {Boolean}
  */
 export function isObject(arg) {
   return Object.prototype.toString.call(arg) === '[object Object]'
@@ -79,6 +87,7 @@ export function isObject(arg) {
 /**
  * 验证 - 是否为空数据
  * @param {*} obj
+ * @returns {Boolean}
  */
 export function isEmpty(obj) {
   if (obj == null) {

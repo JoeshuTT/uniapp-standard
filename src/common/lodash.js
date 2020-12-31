@@ -3,6 +3,7 @@
 /**
  * 补零
  * @param {Number} n
+ * @returns {String}
  */
 export const padZero = function (n) {
   n = n.toString()
@@ -57,6 +58,7 @@ export const debounce = function (fn, delay) {
 /**
  * 浅拷贝
  * @param {Object} source
+ * @returns {Object}
  */
 export function shallowClone(source) {
   if (!source && typeof source !== 'object') {
@@ -68,13 +70,14 @@ export function shallowClone(source) {
 /**
  * 深拷贝
  * @param {Object} source
+ * @returns {Object}
  */
 export function deepClone(source) {
   if (!source && typeof source !== 'object') {
     throw new Error('error arguments', 'deepClone')
   }
   const targetObj = source.constructor === Array ? [] : {}
-  Object.keys(source).forEach((keys) => {
+  Object.keys(source).forEach(keys => {
     if (source[keys] && typeof source[keys] === 'object') {
       targetObj[keys] = deepClone(source[keys])
     } else {
