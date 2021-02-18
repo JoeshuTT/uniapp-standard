@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .mb20 {
   margin-bottom: 20rpx;
   line-height: 100rpx;

@@ -1,17 +1,22 @@
 // request
+import config from '@/config'
+import store from '@/store'
+
 var Fly = require('flyio/dist/npm/wx')
-
 var fly = new Fly()
-
+var timestamp = 0
 // 请求配置
-fly.config.baseURL = '111'
-fly.config.headers['content-type'] = 'application/x-www-form-urlencoded'
-// fly.config.headers['content-type'] = 'application/json'
+fly.config.baseURL = config.base_api
+// fly.config.headers['content-type'] = 'application/json;charset=utf-8' // 默认JSON 提交
+fly.config.headers['content-type'] = 'application/x-www-form-urlencoded;charset=utf-8'
 
 // 添加请求拦截器
 fly.interceptors.request.use(
   config => {
-    // console.log(config)
+    // #ifdef APP-PLUS
+    console.log('request ' + config.baseURL + config.url, JSON.stringify(config.body))
+    // #endif
+    store.state.token && (config.headers['token'] = store.state.token)
     return config
   },
   error => {
@@ -24,7 +29,7 @@ fly.interceptors.response.use(
   response => {
     const { status, data } = response
     if (Number(status) === 200) {
-      if (Number(data.code) === 0) {
+      if (Number(data.status) === 200) {
         // 只将请求结果的 data字段返回
         return Promise.resolve(data)
       } else {
@@ -45,7 +50,7 @@ fly.interceptors.response.use(
 
 // 处理HTTP错误（非200）
 function httpErrorHandle(err) {
-  console.log('处理HTTP错误 httpErrorHandle', err)
+  // console.log('处理HTTP错误 httpErrorHandle', err)
   const code = err.status
   switch (code) {
     case 0:
@@ -73,12 +78,42 @@ function httpErrorHandle(err) {
 }
 // 处理业务错误
 function serviceErrorHandle(data) {
-  console.log('处理业务错误 serviceErrorHandle', data)
+  // console.log('处理业务错误 serviceErrorHandle', data)
+  const code = data.status
+  switch (code) {
+    case 205:
+      // 未登录
+      store.commit('logout')
+      toLogin()
+      break
+    default:
+      if (config.isDevelop) {
+        uni.showToast({
+          icon: 'none',
+          title: `status:${data.status},msg:${data.errorMsg}`,
+        })
+      } else {
+        uni.showToast({
+          icon: 'none',
+          title: data.errorMsg,
+        })
+      }
 
-  uni.showToast({
-    icon: 'none',
-    title: `status:${data.code},msg:${data.msg}`,
-  })
+      break
+  }
 }
 
+// 跳转登录
+function toLogin() {
+  var newTimestamp = +new Date()
+  if (newTimestamp - timestamp > 3000) {
+    timestamp = +new Date()
+    setTimeout(() => {
+      console.log('跳转登录页')
+      uni.navigateTo({
+        url: '/pages/login/login',
+      })
+    }, 150)
+  }
+}
 export default fly

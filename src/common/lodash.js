@@ -5,17 +5,17 @@
  * @param {Number} n
  * @returns {String}
  */
-export const padZero = function (n) {
+export function padZero(n) {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
 
 /**
  * 函数节流
- * @param {*} fn 事件回调
- * @param {*} interval 时间间隔的阈值
+ * @param {callback} fn 事件回调
+ * @param {Number} interval 时间间隔的阈值
  */
-export const throttle = function (fn, interval) {
+export function throttle(fn, interval) {
   let last = 0
   return function () {
     const context = this
@@ -32,9 +32,9 @@ export const throttle = function (fn, interval) {
 /**
  * 函数防抖
  * @param {callback} fn 事件回调
- * @param {number} delay 每次推迟执行的等待时间
+ * @param {Number} delay 每次推迟执行的等待时间
  */
-export const debounce = function (fn, delay) {
+export function debounce(fn, delay) {
   let last = 0
   let timer = null
   return function () {
@@ -85,4 +85,38 @@ export function deepClone(source) {
     }
   })
   return targetObj
+}
+
+/**
+ * 保留小数点（非四舍五入）
+ * @param {Number} n 数值
+ * @param {Number} fixed 小数点后数字的个数
+ * @example toFixed(3.146, 2) // 3.14
+ */
+export function toFixed(n, fixed) {
+  return ~~(Math.pow(10, fixed) * n) / Math.pow(10, fixed)
+}
+
+/**
+ * 数组转map
+ * @param {Array} array
+ * @param {String} key
+ */
+
+export function arrayToMap(array, key = 'value') {
+  const map = {}
+  if (array.length) {
+    array.forEach(item => {
+      map[item[key]] = item
+    })
+  }
+  return map
+}
+
+/**
+ * 数组去重
+ * @param {Array} arr
+ */
+export function unique(arr) {
+  return [...new Set(arr)]
 }

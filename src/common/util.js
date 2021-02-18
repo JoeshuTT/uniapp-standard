@@ -1,5 +1,3 @@
-// util
-
 import { isDef, isNumeric } from './validate'
 
 /**
@@ -77,6 +75,20 @@ const getPrevPage = function (delta = 1) {
 }
 
 /**
+ * 获取当前页面路径
+ * @description 可用于修改上一页数据
+ * @returns {String}
+ */
+const getCurrentRoute = function () {
+  const pages = getCurrentPages()
+  if (pages.length > 0) {
+    const currentPage = pages[pages.length - 1]
+    return currentPage.route
+  }
+  return '/'
+}
+
+/**
  * API Promise化
  * @param {Function} func 可用的uniapp的API函数名
  * @example
@@ -126,7 +138,7 @@ const rpx2px = function (val, destWidth = 750) {
 }
 
 /**
- * 一个参数对象格式化为一个url参数，编码
+ * 将一个参数对象格式化为一个url参数，编码
  * @description 可用于页面跳转携带多个参数，携带中文参数的情况
  * @param {Object} query 参数对象
  * @returns {String}
@@ -142,7 +154,7 @@ const qsStringify = function (query) {
 }
 
 /**
- * 一个已编码参数对象, 解码
+ * 对一个已编码的参数对象, 解码
  * @description 可用于页面跳转携带多个参数，携带中文参数的情况
  * @param {Object} query 参数对象
  * @returns {Object}
@@ -158,6 +170,7 @@ const qsDecode = function (query) {
   })
   return target
 }
+
 /**
  * 查询指定节点的布局位置信息，其功能类似于 DOM 的 getBoundingClientRect
  * @param {Boolean} context 选择器范围，页面中是一般是使用this
@@ -217,15 +230,16 @@ const log = (type = 'danger', key = '错误', text = '系统异常') => {
 }
 
 module.exports = {
-  getSystemInfoSync,
   padZero,
+  getSystemInfoSync,
   storageSync,
   getPrevPage,
+  getCurrentRoute,
   promisify,
   addUnit,
   rpx2px,
   qsStringify,
   qsDecode,
-  log,
   getRect,
+  log,
 }

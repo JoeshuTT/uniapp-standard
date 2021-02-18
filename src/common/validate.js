@@ -104,3 +104,12 @@ export function isEmpty(obj) {
   }
   return false
 }
+
+/**
+ * 验证 - 是否为URL
+ * @param {*} value
+ * @returns {Boolean}
+ */
+export function isUrl(value) {
+  return /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w-.\/?%&=]*)?/.test(value)
+}

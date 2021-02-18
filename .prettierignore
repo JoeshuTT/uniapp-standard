@@ -15,10 +15,16 @@ package-lock.json
 
 ## Local
 src/unpackage
+unpackage
 src/wxcomponents
-src/pages.json
-src/manifest.json
+wxcomponents
 src/components/uni-ui
+components/uni-ui
+src/common/plugins
+common/plugins
+src/manifest.json
+manifest.json
+
 ## Built-files
 .cache
 dist

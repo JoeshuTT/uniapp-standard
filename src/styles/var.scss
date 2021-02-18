@@ -1,11 +1,11 @@
 /* 项目样式变量 */
 
-/* 主题色 */
+// 主题色
 $ui-color: #fc6713;
 $ui-page-bgcolor: #f7f7f7;
 $ui-border-radius: 4px;
 $ui-box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.06);
-$ui-mask-bgcolor: rgba(0,0,0,.3);
+$ui-mask-bgcolor: rgba(0, 0, 0, 0.3);
 $ui-navbar-height: 44px;
 
 // Color Palette
@@ -54,15 +54,13 @@ $ui-font-size-md: 14px;
 $ui-font-size-lg: 16px;
 $ui-font-size-xlg: 18px;
 $ui-font-weight-bold: 500;
-$ui-base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
-  'Microsoft Yahei', sans-serif;
-$ui-price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
-  sans-serif;
+$ui-base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto,
+  'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+$ui-price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial, sans-serif;
 
 // Animation
-$ui-animation-duration-base: .3s;
-$ui-animation-duration-fast: .2s;
+$ui-animation-duration-base: 0.3s;
+$ui-animation-duration-fast: 0.2s;
 
 // Border
 $ui-border-color: $ui-gray-2;

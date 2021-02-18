@@ -1,12 +1,15 @@
-// iconFont
-/* 引入第三方或自定义的字体图标样式 */
+// 引入第三方或自定义的字体图标样式 iconFont
+
 @font-face {
   font-family: 'uiIcon';
-  src: url('https://at.alicdn.com/t/font_2091441_rwaf8aurg48.ttf') format('truetype');
+  // src: url('https://at.alicdn.com/t/font_2091441_rwaf8aurg48.ttf.ttf') format('truetype');
+  src: url('@/static/iuiIconFont.ttf') format('truetype');
 }
 
 .ui-icon {
-  display: inline-block;
+  // #ifndef APP-PLUS-NVUE
   line-height: inherit;
+  // #endif
+  display: inline-block;
   font-family: 'uiIcon';
 }
