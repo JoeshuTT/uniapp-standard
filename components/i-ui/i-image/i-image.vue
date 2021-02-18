@@ -4,7 +4,15 @@
     <!--图片加载器 start -->
     <image style="width: 0; height: 0; display: none" :src="src" @load="onImgLoad" @error="onImgError" />
     <!--图片加载器 end -->
-    <image :src="url" class="i-image__img" :mode="mode" :lazy-load="lazyLoad" :show-menu-by-longpress="showMenuByLongpress" :style="[mergeStyle]" :class="[fadeShow && 'fade-out', fadeShow && loaded ? 'fade-in' : '']" />
+    <image
+      :src="url"
+      class="i-image__img"
+      :mode="mode"
+      :lazy-load="lazyLoad"
+      :show-menu-by-longpress="showMenuByLongpress"
+      :style="[mergeStyle]"
+      :class="[fadeShow && 'fade-out', fadeShow && loaded ? 'fade-in' : '']"
+    />
     <view v-if="showLoading && loading" class="i-image__loading">
       <slot name="loading"><i-icon name="photo-o" size="24" /></slot>
     </view>
@@ -15,7 +23,16 @@
   <!-- #endif -->
   <!-- #ifdef APP-NVUE -->
   <!-- eslint-disable-next-line -->
-  <image :style="[mergeStyle]" :src="src" :lazy-load="lazyLoad" :mode="mode" :fade-show="fadeShow" class="i-image__img" @load="onImgLoad" @error="onImgError" />
+  <image
+    :style="[mergeStyle]"
+    :src="src"
+    :lazy-load="lazyLoad"
+    :mode="mode"
+    :fade-show="fadeShow"
+    class="i-image__img"
+    @load="onImgLoad"
+    @error="onImgError"
+  />
   <!-- #endif -->
 </template>
 
@@ -113,8 +130,8 @@ export default {
           viewStyle.borderRadius = addUnit(width / 2, 'rpx')
         } else {
           viewStyle.borderRadius = addUnit(
-            width.replace(/\d+/g, ($1) => `${Number($1) / 2}`),
-            'rpx'
+            width.replace(/\d+/g, $1 => `${Number($1) / 2}`),
+            'rpx',
           )
         }
       }

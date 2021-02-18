@@ -1,12 +1,20 @@
 <template>
-  <view v-if="inited" ref="iOverlay" class="i-overlay" :class="[customClass]" :style="[overlayStyle]" @click="onClick" @touchmove.stop.prevent="noop">
+  <view
+    v-if="inited"
+    ref="iOverlay"
+    class="i-overlay"
+    :class="[customClass]"
+    :style="[overlayStyle]"
+    @click="onClick"
+    @touchmove.stop.prevent="noop"
+  >
     <slot />
   </view>
 </template>
 
 <script>
 import IComponent from '../mixins/component'
-const nextTick = () => new Promise((resolve) => setTimeout(resolve, 1000 / 30))
+const nextTick = () => new Promise(resolve => setTimeout(resolve, 1000 / 30))
 // #ifdef APP-NVUE
 const animation = uni.requireNativePlugin('animation')
 // #endif
@@ -107,7 +115,7 @@ export default {
               if (!this.show && this.inited) {
                 this.inited = false
               }
-            }
+            },
           )
         })
         .catch(() => {})

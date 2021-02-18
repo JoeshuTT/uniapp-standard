@@ -9,12 +9,25 @@
     <i-overlay :show="overlay && value" :custom-style="overlayStyle" @click="onOverlayClick" />
     <!-- #endif -->
     <template v-if="position === 'center'">
-      <view v-if="inited" ref="ani" class="i-popup" :class="[customClass, 'i-popup--' + position, classes]" :style="[mergeStyle]" @click="onOverlayClick">
+      <view
+        v-if="inited"
+        ref="ani"
+        class="i-popup"
+        :class="[customClass, 'i-popup--' + position, classes]"
+        :style="[mergeStyle]"
+        @click="onOverlayClick"
+      >
         <view class="i-popup__content" :style="[customStyle]" @click.stop="noop"><slot /></view>
       </view>
     </template>
     <template v-else>
-      <view v-if="inited" ref="ani" class="i-popup" :class="[customClass, 'i-popup--' + position, classes]" :style="[mergeStyle]">
+      <view
+        v-if="inited"
+        ref="ani"
+        class="i-popup"
+        :class="[customClass, 'i-popup--' + position, classes]"
+        :style="[mergeStyle]"
+      >
         <slot />
       </view>
     </template>

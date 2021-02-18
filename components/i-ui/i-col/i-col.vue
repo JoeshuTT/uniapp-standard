@@ -51,7 +51,7 @@ export default {
   // #ifdef APP-NVUE
   mounted() {
     setTimeout(() => {
-      dom.getComponentRect(this.$parent.$refs.iRow, (res) => {
+      dom.getComponentRect(this.$parent.$refs.iRow, res => {
         if (res.size && res.size.width) {
           const rect = res.size
           const parentWidth = rect.width
