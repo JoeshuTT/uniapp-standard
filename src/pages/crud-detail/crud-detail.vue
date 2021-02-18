@@ -5,7 +5,7 @@
     </view>
     <view class="btn-area">
       <i-button class="mb20" type="default">更新</i-button>
-      <button type="danger" size="40" bindtap="removeTodo" loading="{{deleting}}">删除</button>
+      <button type="danger" size="40" bindtap="removeTodo" :loading="deleting">删除</button>
     </view>
   </view>
 </template>
@@ -18,6 +18,7 @@ export default {
   data() {
     return {
       list: [],
+      deleting: false,
     }
   },
   onLoad() {
