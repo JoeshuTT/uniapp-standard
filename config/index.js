@@ -3,7 +3,7 @@
  */
 
 const themeColor = '#42b983'
-const appName = 'Hello uniapp'
+const appName = 'uniapp-standard'
 
 // development, production
 const config = {
