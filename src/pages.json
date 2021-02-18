@@ -1,66 +1,76 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/tab-bar/home/home",
-			"style": {
-                "app-plus": {
-                    "bounce": "none",
-                    "scrollIndicator": "none"
-                }
-            }
-		},
-		{
-			"path": "pages/tab-bar/user/user",
-			"style": {
-                "app-plus": {
-                    "bounce": "none",
-                    "scrollIndicator": "none"
-                }
-            }
-		},
-		{
-            "path" : "pages/temp/temp",
-            "style": {
-                "app-plus": {
-                    "bounce": "none",
-                    "scrollIndicator": "none"
-                }
-            }
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/tab-bar/home/home",
+      "style": {
+        "app-plus": {
+          "bounce": "none",
+          "scrollIndicator": "none"
         }
-    ],
-    "tabBar": {
-        "color": "#b2b2b2",
-        "selectedColor": "#7ebea0",
-        "backgroundColor": "#ffffff",
-        // #ifdef APP-PLUS
-        "borderStyle": "#f2f2f2",
-        // #endif
-        "list": [
-            {
-                "pagePath": "pages/tab-bar/home/home",
-                "text": "首页",
-                "iconPath": "static/tab-bar/home.png",
-                "selectedIconPath": "static/tab-bar/home_on.png"
-            },
-            {
-                "pagePath": "pages/tab-bar/user/user",
-                "text": "我的",
-                "iconPath": "static/tab-bar/user.png",
-                "selectedIconPath": "static/tab-bar/user_on.png"
-            }
-        ]
+      }
     },
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uniapp-standard",
-		"navigationBarBackgroundColor": "#f8f8f8",
-		"backgroundColor": "#f8f8f8"
-	},
-	"easycom": {
-        "autoscan": true,
-        "custom": {
-            "^uni-(.*)": "@/components/uni-ui/uni-$1/uni-$1.vue",
-            "^i-(.*)": "@/components/i-ui/i-$1/i-$1.vue"
+    {
+      "path": "pages/tab-bar/user/user",
+      "style": {
+        "app-plus": {
+          "bounce": "none",
+          "scrollIndicator": "none"
         }
+      }
+    },
+    {
+      "path": "pages/temp/temp",
+      "style": {
+        "app-plus": {
+          "bounce": "none",
+          "scrollIndicator": "none"
+        }
+      }
+    },
+    {
+      "path": "pages/crud/crud",
+      "style": {
+        "app-plus": {
+          "bounce": "none",
+          "scrollIndicator": "none"
+        }
+      }
     }
+  ],
+  "tabBar": {
+    "color": "#b2b2b2",
+    "selectedColor": "#7ebea0",
+    "backgroundColor": "#ffffff",
+    // #ifdef APP-PLUS
+    "borderStyle": "#f2f2f2",
+    // #endif
+    "list": [
+      {
+        "pagePath": "pages/tab-bar/home/home",
+        "text": "首页",
+        "iconPath": "static/tab-bar/home.png",
+        "selectedIconPath": "static/tab-bar/home_on.png"
+      },
+      {
+        "pagePath": "pages/tab-bar/user/user",
+        "text": "我的",
+        "iconPath": "static/tab-bar/user.png",
+        "selectedIconPath": "static/tab-bar/user_on.png"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uniapp-standard",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "backgroundColor": "#f8f8f8"
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^uni-(.*)": "@/components/uni-ui/uni-$1/uni-$1.vue",
+      "^i-(.*)": "@/components/i-ui/i-$1/i-$1.vue"
+    }
+  }
 }
