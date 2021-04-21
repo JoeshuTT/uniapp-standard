@@ -29,13 +29,13 @@ const storageSync = {
       // error
     }
   },
-  get(key, def) {
+  get(key, def = null) {
     try {
       const value = uni.getStorageSync(key)
-      return value || null || def
+      return value || def
     } catch (e) {
       // error
-      return null || def
+      return def
     }
   },
   remove(key) {
@@ -171,65 +171,7 @@ const qsDecode = function (query) {
   return target
 }
 
-/**
- * 查询指定节点的布局位置信息，其功能类似于 DOM 的 getBoundingClientRect
- * @param {Boolean} context 选择器范围，页面中是一般是使用this
- * @param {String} selector .a, #a
- * @param {Boolean} all
- */
-const getRect = function (context, selector, all = false) {
-  return new Promise(resolve => {
-    uni
-      .createSelectorQuery()
-      .in(context)
-      [all ? 'selectAll' : 'select'](selector)
-      .boundingClientRect(rect => {
-        resolve(rect)
-      })
-      .exec()
-  })
-}
-
-/**
- * 个性化 console.log
- * @param {*} type
- * @param {*} key
- * @param {*} text
- */
-const log = (type = 'danger', key = '错误', text = '系统异常') => {
-  /* #ifndef H5 */
-  console.log(`%c ${key} %c ${text}`)
-  /* #endif */
-  /* #ifdef  H5 */
-  let bgColor = '#ee0a24'
-  switch (type) {
-    case 'default':
-      bgColor = '#515a6e'
-      break
-    case 'primary':
-      bgColor = '#07c160'
-      break
-    case 'info':
-      bgColor = '#1989fa'
-      break
-    case 'warning':
-      bgColor = '#ff976a'
-      break
-    case 'danger':
-      bgColor = '#ee0a24'
-      break
-    default:
-      break
-  }
-  console.log(
-    `%c ${key} %c ${text}`,
-    'background:#7ebea0; padding: 2px 4px; border-radius: 3px 0 0 3px; color: #fff;',
-    `background:${bgColor};padding: 2px 4px; border-radius: 0 3px 3px 0;  color: #fff;`,
-  )
-  /* #endif */
-}
-
-module.exports = {
+export default {
   padZero,
   getSystemInfoSync,
   storageSync,
@@ -240,6 +182,4 @@ module.exports = {
   rpx2px,
   qsStringify,
   qsDecode,
-  getRect,
-  log,
 }

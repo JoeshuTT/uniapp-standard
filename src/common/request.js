@@ -1,4 +1,6 @@
-// request
+/**
+ * request
+ */
 import config from '@/config'
 import store from '@/store'
 
@@ -29,7 +31,7 @@ fly.interceptors.response.use(
   response => {
     const { status, data } = response
     if (Number(status) === 200) {
-      if (Number(data.status) === 200) {
+      if (Number(data.code) === 0) {
         // 只将请求结果的 data字段返回
         return Promise.resolve(data)
       } else {
@@ -79,7 +81,7 @@ function httpErrorHandle(err) {
 // 处理业务错误
 function serviceErrorHandle(data) {
   // console.log('处理业务错误 serviceErrorHandle', data)
-  const code = data.status
+  const code = data.code
   switch (code) {
     case 205:
       // 未登录
@@ -90,12 +92,12 @@ function serviceErrorHandle(data) {
       if (config.isDevelop) {
         uni.showToast({
           icon: 'none',
-          title: `status:${data.status},msg:${data.errorMsg}`,
+          title: `status:${data.code},msg:${data.msg}`,
         })
       } else {
         uni.showToast({
           icon: 'none',
-          title: data.errorMsg,
+          title: data.msg,
         })
       }
 
@@ -105,9 +107,9 @@ function serviceErrorHandle(data) {
 
 // 跳转登录
 function toLogin() {
-  var newTimestamp = +new Date()
+  const newTimestamp = +new Date()
   if (newTimestamp - timestamp > 3000) {
-    timestamp = +new Date()
+    timestamp = newTimestamp
     setTimeout(() => {
       console.log('跳转登录页')
       uni.navigateTo({

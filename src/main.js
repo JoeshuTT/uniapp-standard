@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App'
 
 import store from './store'
-import util from './common/util.js'
+import util from './common/util'
 import config from './config'
 
 Vue.config.productionTip = false
